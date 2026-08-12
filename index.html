@@ -3,409 +3,336 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>광명 리모델링 견적 조정안</title>
+<title>리모델링 견적, 쉽게 줄이기 · 광명 30평</title>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <style>
 :root{
-  --bg:#F7F8FA;
+  --paper:#FBF8F3;
   --card:#FFFFFF;
-  --line:#E5E8EC;
-  --line-2:#EFF1F4;
-  --tx:#15181D;
-  --tx-2:#5A626E;
-  --tx-3:#98A0AC;
-  --brand:#1F5EFF;
-  --brand-bg:#EDF2FF;
-  --cut:#E0483A;
-  --cut-bg:#FDEEEC;
-  --keep:#0E9464;
-  --keep-bg:#E8F6F0;
-  --warn:#B4740A;
-  --warn-bg:#FDF4E3;
-  --r:10px;
+  --ink:#23201B;
+  --ink-2:#5F5A50;
+  --ink-3:#96907F;
+  --line:#EAE3D6;
+  --line-2:#F1ECE1;
+  --accent:#2B5FD9;
+  --accent-bg:#EAF0FE;
+  --safe:#1C8A5B;
+  --safe-bg:#E7F5EE;
+  --taste:#B77A12;
+  --taste-bg:#FBF1DD;
+  --keep:#C0483A;
+  --keep-bg:#FBEBE8;
+  --r:14px;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
 }
 *{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
 body{
-  margin:0;background:var(--bg);color:var(--tx);
+  margin:0;background:var(--paper);color:var(--ink);
   font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-  font-size:14px;line-height:1.6;padding-bottom:96px;
+  font-size:15px;line-height:1.65;padding-bottom:104px;
+  -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px;}
 .num{font-variant-numeric:tabular-nums;}
+b{font-weight:700;}
 
-/* ---------- 상단 바 ---------- */
-.topbar{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
-.topbar-in{max-width:1120px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:26px;height:52px;}
-.brand{font-weight:700;font-size:14.5px;letter-spacing:-.01em;white-space:nowrap;}
-.brand span{color:var(--tx-3);font-weight:500;}
-.nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
-.nav::-webkit-scrollbar{display:none;}
-.nav button{
-  font-family:inherit;font-size:13.5px;font-weight:500;
-  background:none;border:none;cursor:pointer;color:var(--tx-2);
-  padding:6px 12px;border-radius:7px;white-space:nowrap;
-  transition:background .13s,color .13s;
-}
-.nav button:hover{background:var(--bg);color:var(--tx);}
-.nav button[aria-current="page"]{background:var(--brand-bg);color:var(--brand);font-weight:600;}
-.nav button:focus-visible{outline:2px solid var(--brand);outline-offset:1px;}
+.topbar{background:rgba(251,248,243,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+.topbar-in{max-width:760px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px;height:50px;}
+.brand{font-weight:800;font-size:14.5px;letter-spacing:-.02em;white-space:nowrap;}
+.brand em{color:var(--ink-3);font-weight:600;font-style:normal;}
+.jump{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;}
+.jump::-webkit-scrollbar{display:none;}
+.jump a{font-size:12.5px;font-weight:600;color:var(--ink-2);text-decoration:none;padding:5px 9px;border-radius:8px;white-space:nowrap;transition:.13s;}
+.jump a:hover{background:var(--accent-bg);color:var(--accent);}
 
-/* ---------- 헤더 ---------- */
-header.page{padding:30px 0 22px;}
-header.page h1{font-size:23px;font-weight:700;margin:0 0 6px;letter-spacing:-.02em;}
-header.page p{margin:0;color:var(--tx-2);font-size:13.5px;}
-.tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
-.tag{
-  font-size:12px;background:var(--card);border:1px solid var(--line);
-  padding:4px 10px;border-radius:20px;color:var(--tx-2);
-}
-.tag b{color:var(--tx);font-weight:600;}
+.hero{padding:34px 0 8px;text-align:center;}
+.hero .eyebrow{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.02em;margin-bottom:10px;}
+.hero h1{font-size:26px;font-weight:800;letter-spacing:-.03em;margin:0 0 20px;text-wrap:balance;line-height:1.35;}
+.dial{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 20px;box-shadow:0 8px 30px rgba(35,32,27,.06);}
+.dial .from{font-size:13.5px;color:var(--ink-3);}
+.dial .from s{color:var(--ink-3);}
+.dial .now{font-size:44px;font-weight:800;letter-spacing:-.035em;color:var(--accent);line-height:1.1;margin:4px 0 2px;}
+.dial .save{font-size:14px;color:var(--safe);font-weight:700;}
+.dial .band{margin-top:16px;padding-top:15px;border-top:1px dashed var(--line);}
+.progress{height:9px;background:var(--line-2);border-radius:5px;overflow:hidden;}
+.progress i{display:block;height:100%;width:0;background:var(--accent);border-radius:5px;transition:width .4s cubic-bezier(.4,0,.2,1);}
+.progress i.done{background:var(--safe);}
+.band-lbl{display:flex;justify-content:space-between;gap:10px;margin-top:8px;font-size:12.5px;color:var(--ink-3);}
+.band-lbl .st{font-weight:700;}
+.band-lbl .st.done{color:var(--safe);}
+.band-lbl .st.miss{color:var(--taste);}
+.hero .hint{font-size:13.5px;color:var(--ink-2);margin:16px 0 0;}
 
-/* ---------- 요약 카드 ---------- */
-.kpis{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));
-  gap:1px;background:var(--line);border:1px solid var(--line);
-  border-radius:var(--r);overflow:hidden;margin-bottom:26px;
-}
-.kpi{background:var(--card);padding:15px 16px;}
-.kpi .k{font-size:11.5px;color:var(--tx-3);font-weight:500;margin-bottom:5px;letter-spacing:.01em;}
-.kpi .v{font-size:20px;font-weight:700;letter-spacing:-.02em;}
-.kpi .d{font-size:11.5px;color:var(--tx-3);margin-top:3px;}
-.kpi.was .v{color:var(--tx-3);}
-.kpi.now .v{color:var(--brand);}
-.kpi.save .v{color:var(--cut);}
-.kpi.goal.hit .v{color:var(--keep);}
-.kpi.goal.miss .v{color:var(--warn);}
+section.blk{padding:30px 0 4px;scroll-margin-top:62px;}
+.sec-head{margin:0 0 14px;}
+.sec-head .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:8px;background:var(--ink);color:var(--paper);font-size:13px;font-weight:800;margin-right:9px;vertical-align:2px;}
+.sec-head h2{display:inline;font-size:20px;font-weight:800;letter-spacing:-.02em;}
+.sec-head p{margin:8px 0 0;color:var(--ink-2);font-size:14px;}
 
-/* ---------- 섹션 ---------- */
-.view{display:none;}
-.view.on{display:block;}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:18px;overflow:hidden;}
-.card-head{padding:15px 18px;border-bottom:1px solid var(--line-2);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-.card-head h2{margin:0;font-size:15px;font-weight:700;letter-spacing:-.01em;}
-.card-head .sub{font-size:12.5px;color:var(--tx-3);margin-top:2px;}
-.card-body{padding:16px 18px;}
-.card-body.flush{padding:0;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:14px;overflow:hidden;}
+.card-pad{padding:18px 20px;}
+.card h3{margin:0 0 4px;font-size:15.5px;font-weight:800;letter-spacing:-.01em;}
+.card .csub{font-size:13px;color:var(--ink-3);margin:0 0 14px;}
 
-/* ---------- 표 ---------- */
-table{width:100%;border-collapse:collapse;font-size:13.5px;}
-thead th{
-  font-size:11.5px;font-weight:600;color:var(--tx-3);text-align:left;
-  padding:10px 14px;border-bottom:1px solid var(--line);background:#FBFCFD;
-  white-space:nowrap;
-}
-th.r,td.r{text-align:right;}
-tbody td{padding:10px 14px;border-bottom:1px solid var(--line-2);}
-tbody tr:last-child td{border-bottom:none;}
-tbody tr:hover td{background:#FBFCFD;}
-.code{font-family:var(--mono);font-size:11.5px;color:var(--tx-3);}
-.barcell{position:relative;min-width:88px;}
-.bar{height:5px;background:var(--brand-bg);border-radius:3px;overflow:hidden;}
-.bar i{display:block;height:100%;background:var(--brand);border-radius:3px;}
-.bar-major i{background:var(--cut);}
-.bar-major{background:var(--cut-bg);}
-.pct{font-family:var(--mono);font-size:11.5px;color:var(--tx-3);margin-top:3px;}
-tfoot td{padding:12px 14px;border-top:1px solid var(--line);font-weight:700;background:#FBFCFD;}
+.stack{display:flex;flex-direction:column;}
+.stack-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line-2);font-size:14px;}
+.stack-row:last-child{border-bottom:none;}
+.stack-row .k{color:var(--ink-2);}
+.stack-row .k small{color:var(--ink-3);font-size:11.5px;margin-left:6px;font-family:var(--mono);}
+.stack-row.sum{margin-top:6px;border-top:2px solid var(--ink);border-bottom:none;padding-top:12px;font-size:17px;font-weight:800;}
+.stack-row.faint .k,.stack-row.faint span{color:var(--ink-3);}
+.tip{margin-top:14px;background:var(--accent-bg);border-radius:12px;padding:13px 15px;font-size:13.5px;line-height:1.6;color:#1A3E96;}
+.tip b{color:var(--accent);}
 
-/* ---------- 계산 스택 ---------- */
-.calc{display:flex;flex-direction:column;}
-.calc-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line-2);font-size:13.5px;}
-.calc-row:last-child{border-bottom:none;}
-.calc-row .k{color:var(--tx-2);}
-.calc-row .k em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--tx-3);margin-left:7px;}
-.calc-row.total{margin-top:6px;border-top:2px solid var(--tx);border-bottom:none;padding-top:12px;font-size:16px;font-weight:700;}
+.spend{display:flex;flex-direction:column;gap:0;}
+.spend .r{display:grid;grid-template-columns:1fr auto;gap:3px 12px;padding:9px 0;border-bottom:1px solid var(--line-2);align-items:center;}
+.spend .r:last-child{border-bottom:none;}
+.spend .name{font-size:13.5px;font-weight:600;}
+.spend .name em{font-style:normal;color:var(--ink-3);font-weight:500;font-size:12px;margin-left:5px;}
+.spend .val{font-size:13px;font-family:var(--mono);color:var(--ink-2);text-align:right;}
+.spend .track{grid-column:1/3;height:6px;background:var(--line-2);border-radius:4px;overflow:hidden;}
+.spend .track i{display:block;height:100%;background:#C9D3EC;border-radius:4px;}
+.spend .r.big .track i{background:var(--accent);}
+.spend .r.big .name{font-weight:800;}
+.legend{font-size:12.5px;color:var(--ink-3);margin-top:12px;}
+.legend b{color:var(--accent);}
 
-/* ---------- 조정 리스트 ---------- */
-.tools{display:flex;gap:6px;flex-wrap:wrap;}
-.chip{
-  font-family:inherit;font-size:12.5px;font-weight:500;cursor:pointer;
-  background:var(--card);border:1px solid var(--line);color:var(--tx-2);
-  padding:5px 11px;border-radius:20px;transition:.13s;
-}
-.chip:hover{border-color:var(--tx-3);color:var(--tx);}
-.chip.primary{background:var(--brand);border-color:var(--brand);color:#fff;}
-.chip.primary:hover{background:#1748C9;border-color:#1748C9;color:#fff;}
-.chip:focus-visible{outline:2px solid var(--brand);outline-offset:1px;}
+.presets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.preset{font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;background:var(--card);border:1.5px solid var(--line);color:var(--ink-2);padding:9px 14px;border-radius:11px;transition:.13s;line-height:1.3;text-align:left;}
+.preset small{display:block;font-weight:500;font-size:11.5px;color:var(--ink-3);margin-top:1px;}
+.preset:hover{border-color:var(--ink-3);}
+.preset.go{background:var(--accent);border-color:var(--accent);color:#fff;}
+.preset.go small{color:#D5E0FB;}
+.preset.go:hover{background:#1E4CBD;}
+.preset:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 
-.row{
-  display:grid;grid-template-columns:20px 1fr auto;gap:0 13px;
-  padding:14px 18px;border-bottom:1px solid var(--line-2);cursor:pointer;
-  transition:background .12s,opacity .12s;
-}
-.row:last-child{border-bottom:none;}
-.row:hover{background:#FBFCFD;}
-.row.off{opacity:.42;}
-.row.off .amt{text-decoration:line-through;}
-.chk{
-  width:17px;height:17px;border:1.5px solid #C6CCD5;border-radius:5px;margin-top:2px;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  font-size:11px;color:#fff;line-height:1;
-}
-.row:not(.off) .chk{background:var(--cut);border-color:var(--cut);}
-.row:not(.off) .chk::after{content:"✓";}
-.r-title{font-weight:600;font-size:14px;margin-bottom:3px;}
-.r-title .code{margin-left:7px;font-weight:400;}
-.r-desc{font-size:12.5px;color:var(--tx-2);line-height:1.55;}
-.amt{text-align:right;white-space:nowrap;}
-.amt .big{font-size:14.5px;font-weight:700;color:var(--cut);}
-.amt .sm{display:block;font-size:11px;color:var(--tx-3);margin-top:2px;font-family:var(--mono);}
+.grp-head{display:flex;align-items:center;gap:9px;margin:18px 0 9px;}
+.grp-head .dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.grp-head .dot.safe{background:var(--safe);}
+.grp-head .dot.taste{background:var(--taste);}
+.grp-head h4{margin:0;font-size:15px;font-weight:800;}
+.grp-head .memo{font-size:12.5px;color:var(--ink-3);margin-left:auto;text-align:right;}
 
-/* ---------- 지킬 항목 ---------- */
-.keeps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line-2);}
-.keep{background:var(--card);padding:16px 18px;}
-.keep .badge{
-  display:inline-block;font-size:11px;font-weight:600;
-  background:var(--keep-bg);color:var(--keep);
-  padding:2px 8px;border-radius:5px;margin-bottom:8px;
-}
-.keep h4{margin:0 0 4px;font-size:14px;font-weight:600;}
-.keep h4 .amtx{font-family:var(--mono);font-size:12.5px;color:var(--tx-3);margin-left:6px;font-weight:400;}
-.keep p{margin:0;font-size:12.5px;color:var(--tx-2);line-height:1.55;}
+.item{background:var(--card);border:1px solid var(--line);border-radius:13px;margin-bottom:8px;overflow:hidden;cursor:pointer;transition:border-color .13s,box-shadow .13s;}
+.item:hover{border-color:#D8CFBD;}
+.item.on{border-color:var(--safe);box-shadow:0 0 0 1px var(--safe) inset;}
+.item.on.taste{border-color:var(--taste);box-shadow:0 0 0 1px var(--taste) inset;}
+.item-top{display:grid;grid-template-columns:22px 1fr auto;gap:0 13px;padding:14px 16px;align-items:start;}
+.box{width:20px;height:20px;border-radius:6px;border:2px solid #CFC7B6;margin-top:1px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;flex-shrink:0;transition:.12s;}
+.item.on .box{background:var(--safe);border-color:var(--safe);}
+.item.on.taste .box{background:var(--taste);border-color:var(--taste);}
+.item.on .box::after{content:"✓";}
+.i-title{font-size:14.5px;font-weight:700;letter-spacing:-.01em;}
+.i-what{font-size:13px;color:var(--ink-2);margin-top:3px;line-height:1.55;}
+.i-amt{text-align:right;white-space:nowrap;}
+.i-amt .big{font-size:14px;font-weight:800;color:var(--safe);}
+.item.taste .i-amt .big{color:var(--taste);}
+.i-amt .sm{display:block;font-size:11px;color:var(--ink-3);margin-top:2px;font-family:var(--mono);}
+.i-amt .state{display:block;font-size:11px;font-weight:700;margin-top:5px;}
+.item.on .i-amt .state{color:var(--safe);}
+.item.on.taste .i-amt .state{color:var(--taste);}
+.item:not(.on) .i-amt .state{color:var(--ink-3);}
+.item:not(.on) .i-amt .big{color:var(--ink-3);text-decoration:line-through;}
 
-/* ---------- 체크 ---------- */
-.checkitem{padding:15px 18px;border-bottom:1px solid var(--line-2);display:grid;grid-template-columns:auto 1fr;gap:13px;}
-.checkitem:last-child{border-bottom:none;}
-.pill{font-size:11px;font-weight:600;padding:3px 9px;border-radius:5px;height:fit-content;white-space:nowrap;}
-.pill.w{background:var(--warn-bg);color:var(--warn);}
-.pill.b{background:var(--brand-bg);color:var(--brand);}
-.checkitem p{margin:0;font-size:13.5px;line-height:1.6;color:var(--tx-2);}
-.checkitem p b{color:var(--tx);font-weight:600;}
+.keeps{display:flex;flex-direction:column;gap:8px;}
+.keep-item{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--keep);border-radius:11px;padding:14px 16px;}
+.keep-item .kt{font-size:14.5px;font-weight:800;}
+.keep-item .kt .kw{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);font-weight:500;margin-left:7px;}
+.keep-item p{margin:5px 0 0;font-size:13px;color:var(--ink-2);line-height:1.55;}
 
-/* ---------- 하단 고정 ---------- */
-.dock{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);z-index:45;box-shadow:0 -2px 14px rgba(21,24,29,.05);}
-.dock-in{max-width:1120px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-.dcell .k{font-size:11px;color:var(--tx-3);font-weight:500;}
-.dcell .v{font-size:17px;font-weight:700;letter-spacing:-.02em;}
-.dcell.was .v{color:var(--tx-3);text-decoration:line-through;font-size:14px;font-weight:600;}
-.dcell.now .v{color:var(--brand);}
-.dcell.save .v{color:var(--cut);}
-.arrow{color:#C6CCD5;font-size:15px;}
-.prog{flex:1;min-width:170px;}
-.prog-track{height:6px;background:var(--line-2);border-radius:3px;overflow:hidden;margin-bottom:5px;}
-.prog-fill{height:100%;background:var(--brand);border-radius:3px;width:0;transition:width .3s cubic-bezier(.4,0,.2,1);}
-.prog-fill.hit{background:var(--keep);}
-.prog-lbl{font-size:11px;color:var(--tx-3);display:flex;justify-content:space-between;gap:10px;}
-.prog-lbl .st.hit{color:var(--keep);font-weight:600;}
-.prog-lbl .st.miss{color:var(--warn);font-weight:600;}
+.chk-item{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-bottom:8px;}
+.chk-item .ct{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;margin-bottom:5px;flex-wrap:wrap;}
+.chk-item .tagx{font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;}
+.tagx.a{background:var(--taste-bg);color:var(--taste);}
+.tagx.b{background:var(--accent-bg);color:var(--accent);}
+.chk-item p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.6;}
+.chk-item p b{color:var(--ink);}
+.script{margin-top:8px;background:var(--line-2);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.7;color:var(--ink);}
+.script:before{content:"이렇게 말하세요";display:block;font-size:11px;font-weight:700;color:var(--ink-3);margin-bottom:5px;letter-spacing:.02em;}
 
-footer{color:var(--tx-3);font-size:12px;line-height:1.65;padding:16px 0 8px;}
+footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
 
-@media (max-width:640px){
-  .topbar-in{gap:14px;height:auto;padding:9px 16px;flex-wrap:wrap;}
+.dock{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:45;box-shadow:0 -4px 20px rgba(35,32,27,.06);}
+.dock-in{max-width:760px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:16px;}
+.d-now .k{font-size:11px;color:var(--ink-3);font-weight:600;}
+.d-now .v{font-size:22px;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1.1;}
+.d-now .v small{font-size:12px;color:var(--safe);font-weight:700;margin-left:7px;letter-spacing:0;}
+.d-bar{flex:1;min-width:90px;}
+.d-bar .t{height:7px;background:var(--line-2);border-radius:4px;overflow:hidden;}
+.d-bar .t i{display:block;height:100%;width:0;background:var(--accent);border-radius:4px;transition:width .4s cubic-bezier(.4,0,.2,1);}
+.d-bar .t i.done{background:var(--safe);}
+.d-bar .m{font-size:11px;margin-top:4px;color:var(--ink-3);text-align:right;}
+.d-bar .m.done{color:var(--safe);font-weight:700;}
+
+@media (max-width:560px){
   .wrap{padding:0 16px;}
-  header.page{padding:22px 0 18px;}
-  header.page h1{font-size:19px;}
-  .kpi .v{font-size:17px;}
-  .row{grid-template-columns:20px 1fr;}
-  .amt{grid-column:2;text-align:left;margin-top:7px;}
-  .amt .sm{display:inline;margin-left:8px;}
-  .dock-in{gap:13px;padding:10px 16px;}
-  .prog{order:9;flex-basis:100%;}
-  .tbl-scroll{overflow-x:auto;}
+  .hero h1{font-size:22px;}
+  .dial .now{font-size:36px;}
+  .item-top{grid-template-columns:22px 1fr;}
+  .i-amt{grid-column:2;text-align:left;margin-top:9px;display:flex;gap:12px;align-items:baseline;}
+  .i-amt .sm,.i-amt .state{display:inline;margin:0;}
+  .dock-in{gap:12px;}
+  .d-now .v{font-size:19px;}
+  .topbar-in .brand em{display:none;}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto;}}
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="topbar-in">
-    <div class="brand">광명 리모델링 <span>· 30평</span></div>
-    <nav class="nav" id="nav">
-      <button data-view="v1" aria-current="page">현재 견적서</button>
-      <button data-view="v2">조정안</button>
-      <button data-view="v3">지킬 항목</button>
-      <button data-view="v4">계약 체크</button>
+    <div class="brand">견적 줄이기 <em>· 광명 30평</em></div>
+    <nav class="jump">
+      <a href="#s1">견적 이해</a>
+      <a href="#s2">직접 줄이기</a>
+      <a href="#s3">지킬 것</a>
+      <a href="#s4">계약 전</a>
     </nav>
   </div>
 </div>
 
 <div class="wrap">
 
-  <header class="page">
-    <h1 id="pageTitle">현재 견적서</h1>
-    <p id="pageSub">박목수의 열린 견적서 · 인천3호 · 부가세 포함</p>
-    <div class="tagrow">
-      <span class="tag">대상 <b>광명시 소화동 휴먼시아 4단지</b></span>
-      <span class="tag">규모 <b>30평</b></span>
-      <span class="tag">공정 <b>15개</b></span>
-      <span class="tag">목표 <b>₩71,000,000</b></span>
+  <div class="hero">
+    <div class="eyebrow">인테리어 처음이어도 괜찮아요</div>
+    <h1>8,239만원 견적,<br>어디를 줄일 수 있는지 같이 봐요</h1>
+    <div class="dial">
+      <div class="from">원래 견적 <s class="num">₩82,390,000</s> 에서</div>
+      <div class="now num" id="dialNow">₩71,060,000</div>
+      <div class="save num" id="dialSave">1,133만원 아꼈어요</div>
+      <div class="band">
+        <div class="progress"><i id="dialFill"></i></div>
+        <div class="band-lbl">
+          <span class="st" id="dialMsg">7천만원대 초반 달성 🎉</span>
+          <span>목표: 7천만원대 초반</span>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <div class="kpis">
-    <div class="kpi was"><div class="k">원 견적</div><div class="v num">₩82,390,000</div><div class="d">부가세 포함</div></div>
-    <div class="kpi now"><div class="k">조정 후</div><div class="v num" id="kNow">₩72,710,000</div><div class="d" id="kNowD">9개 항목 적용</div></div>
-    <div class="kpi save"><div class="k">절감</div><div class="v num" id="kSave">₩9,680,000</div><div class="d" id="kSaveD">−11.7%</div></div>
-    <div class="kpi goal miss" id="kGoal"><div class="k">목표 대비</div><div class="v num" id="kGoalV">초과 ₩1,710,000</div><div class="d">₩71,000,000 기준</div></div>
+    <p class="hint">추천안이 적용된 상태예요. 아래에서 <b>지키고 싶은 항목은 다시 눌러</b> 되돌릴 수 있어요.</p>
   </div>
 
-  <!-- ================= VIEW 1 ================= -->
-  <section class="view on" id="v1">
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <h2>공정별 공사비</h2>
-          <div class="sub">창호·가구·타일·철거 4개 공정이 전체의 60%</div>
-        </div>
-      </div>
-      <div class="card-body flush tbl-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th style="width:62px">코드</th>
-              <th>공사명</th>
-              <th class="r" style="width:126px">금액</th>
-              <th style="width:110px">비중</th>
-            </tr>
-          </thead>
-          <tbody id="baseRows"></tbody>
-          <tfoot>
-            <tr><td colspan="2">공사비 합계</td><td class="r num">₩67,121,000</td><td></td></tr>
-          </tfoot>
-        </table>
-      </div>
+  <section class="blk" id="s1">
+    <div class="sec-head">
+      <span class="n">1</span><h2>이 견적, 3분만에 이해하기</h2>
+      <p>줄이기 전에, 이 8,239만원이 어떻게 만들어진 숫자인지부터 봐요.</p>
     </div>
 
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <h2>총액 산출</h2>
-          <div class="sub">공사비 1원 절감 = 최종 1.228원 절감</div>
-        </div>
+    <div class="card"><div class="card-pad">
+      <h3>총액이 왜 공사비보다 훨씬 클까요?</h3>
+      <p class="csub">순수 공사비는 6,712만원. 여기에 세 가지가 얹혀서 8,239만원이 됩니다.</p>
+      <div class="stack">
+        <div class="stack-row"><span class="k">순수 공사비 <small>실제 자재+인건비</small></span><span class="num">₩67,121,000</span></div>
+        <div class="stack-row faint"><span class="k">+ 업체 이윤 <small>공사비의 10%</small></span><span class="num">₩6,712,100</span></div>
+        <div class="stack-row faint"><span class="k">+ 산재·고용보험 <small>공사비의 1.52%</small></span><span class="num">₩1,122,263</span></div>
+        <div class="stack-row faint"><span class="k">+ 부가가치세 <small>10%</small></span><span class="num">₩7,490,000</span></div>
+        <div class="stack-row sum"><span>최종 결제 금액</span><span class="num">₩82,390,000</span></div>
       </div>
-      <div class="card-body">
-        <div class="calc">
-          <div class="calc-row"><span class="k">공사비</span><span class="num">₩67,121,000</span></div>
-          <div class="calc-row"><span class="k">이윤<em>×10%</em></span><span class="num">₩6,712,100</span></div>
-          <div class="calc-row"><span class="k">공사비 합계</span><span class="num">₩73,833,100</span></div>
-          <div class="calc-row"><span class="k">산재보험료<em>×1.1%</em></span><span class="num">₩812,164</span></div>
-          <div class="calc-row"><span class="k">고용보험료<em>×0.42%</em></span><span class="num">₩310,099</span></div>
-          <div class="calc-row"><span class="k">단수 조정</span><span class="num">−₩55,363</span></div>
-          <div class="calc-row"><span class="k">부가가치세<em>×10%</em></span><span class="num">₩7,490,000</span></div>
-          <div class="calc-row total"><span>합계 금액</span><span class="num">₩82,390,000</span></div>
-        </div>
+      <div class="tip">
+        💡 <b>핵심 포인트:</b> 이윤·보험·부가세가 공사비 위에 겹겹이 붙기 때문에, <b>공사비에서 100만원을 빼면 최종 금액은 약 123만원이 줄어요.</b> 그래서 "공사 항목"을 줄이는 게 가장 효과가 큽니다.
+      </div>
+    </div></div>
+
+    <div class="card"><div class="card-pad">
+      <h3>돈이 어디에 가장 많이 쓰이나요?</h3>
+      <p class="csub">공사비 15개 항목 중 <b>창호·가구·타일·철거</b> 4개가 전체의 60%예요. 큰 항목부터 봐야 효과가 큽니다.</p>
+      <div class="spend" id="spend"></div>
+      <div class="legend"><b>■</b> 파란색 = 비중 10% 이상인 큰 항목. 줄일 여지도 여기서 가장 큽니다.</div>
+    </div></div>
+  </section>
+
+  <section class="blk" id="s2">
+    <div class="sec-head">
+      <span class="n">2</span><h2>직접 줄여보기</h2>
+      <p>항목을 누르면 바로 계산돼요. 신호등 색으로 "빼도 되는지"를 표시했어요.</p>
+    </div>
+
+    <div class="presets">
+      <button class="preset go" id="pTarget">✨ 7천 초반 맞추기<small>추천안 · 아래 항목 전부 적용</small></button>
+      <button class="preset" id="pSafe">🟢 안전한 것만<small>품질 손해 0 · 약 7,890만원</small></button>
+      <button class="preset" id="pReset">↩︎ 원래대로<small>아무것도 안 뺀 상태</small></button>
+    </div>
+
+    <div class="grp-head">
+      <span class="dot safe"></span>
+      <h4>마음 편히 빼도 되는 것</h4>
+      <span class="memo">품질·사용성 그대로예요</span>
+    </div>
+    <div id="grpSafe"></div>
+
+    <div class="grp-head">
+      <span class="dot taste"></span>
+      <h4>취향·등급 선택</h4>
+      <span class="memo">한 단계 낮추는 것 · 조금 아쉬울 수 있어요</span>
+    </div>
+    <div id="grpTaste"></div>
+  </section>
+
+  <section class="blk" id="s3">
+    <div class="sec-head">
+      <span class="n">3</span><h2>이건 지키세요 🔴</h2>
+      <p>지금 아끼면 나중에 더 크게 돌아오는 항목이에요. 목록에서 일부러 뺐습니다.</p>
+    </div>
+    <div class="keeps">
+      <div class="keep-item">
+        <div class="kt">창호(샷시·창문) <span class="kw">₩13,700,000</span></div>
+        <p>겨울 결로·웃풍이 여기서 갈려요. 26T 유리·단열간봉 사양 그대로 두세요. 나중에 다시 하면 가장 비싼 공사입니다.</p>
+      </div>
+      <div class="keep-item">
+        <div class="kt">화장실 방수 <span class="kw">₩2,200,000</span></div>
+        <p>2차 방수 포함이에요. 누수가 나면 아랫집 배상 + 마감 전체 재시공으로 번져요. 절대 손대지 마세요.</p>
+      </div>
+      <div class="keep-item">
+        <div class="kt">전기 배선 <span class="kw">₩850,000</span></div>
+        <p>벽·천장 안에 묻히면 나중엔 못 고쳐요. 회로 분리·매립 작업은 그대로.</p>
+      </div>
+      <div class="keep-item">
+        <div class="kt">인건비 항목 전반</div>
+        <p>일당(사람 수·일수)을 줄이면 시공 품질이 바로 떨어져요. 돈은 "자재 등급"에서 아끼는 게 안전합니다.</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= VIEW 2 ================= -->
-  <section class="view" id="v2">
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <h2>조정 항목</h2>
-          <div class="sub">항목을 눌러 켜고 끄면 하단 금액이 바로 반영됩니다</div>
-        </div>
-        <div class="tools">
-          <button class="chip primary" id="btnTarget">7,100만원 맞추기</button>
-          <button class="chip" id="btnAll">전부 적용</button>
-          <button class="chip" id="btnNone">전부 해제</button>
-        </div>
-      </div>
-      <div class="card-body flush" id="cutRows"></div>
+  <section class="blk" id="s4">
+    <div class="sec-head">
+      <span class="n">4</span><h2>계약 전에 꼭 확인</h2>
+      <p>사실 금액보다 이쪽이 더 중요해요. 여기서 새면 애써 줄인 게 되돌아옵니다.</p>
     </div>
 
-    <div class="card">
-      <div class="card-head"><div><h2>조정 후 산출</h2><div class="sub">원 견적서와 동일한 산식</div></div></div>
-      <div class="card-body">
-        <div class="calc">
-          <div class="calc-row"><span class="k">공사비</span><span class="num" id="cBase">₩57,936,000</span></div>
-          <div class="calc-row"><span class="k">이윤<em>×10%</em></span><span class="num" id="cProfit">₩5,793,600</span></div>
-          <div class="calc-row"><span class="k">보험료<em>×1.52%</em></span><span class="num" id="cIns">₩968,690</span></div>
-          <div class="calc-row"><span class="k">부가가치세<em>×10%</em></span><span class="num" id="cVat">₩6,460,000</span></div>
-          <div class="calc-row total"><span>합계 금액</span><span class="num" id="cTotal">₩71,060,000</span></div>
-        </div>
-      </div>
+    <div class="chk-item">
+      <div class="ct"><span class="tagx a">실측 변경</span> "실측 시 변경" 표시가 붙은 3곳</div>
+      <p><b>창호·주방가구·목공사</b>에 "실측 후 금액이 바뀔 수 있다"고 적혀 있어요. 이 셋이 공사비의 약 40%입니다. 계약서에 <b>"실측 후 증액은 최대 ○○만원까지"</b> 상한을 숫자로 넣으세요. 안 넣으면 줄인 금액이 그대로 돌아옵니다.</p>
     </div>
-  </section>
-
-  <!-- ================= VIEW 3 ================= -->
-  <section class="view" id="v3">
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <h2>깎지 말아야 할 항목</h2>
-          <div class="sub">지금 아끼면 나중에 더 크게 돌아옵니다</div>
-        </div>
-      </div>
-      <div class="card-body flush">
-        <div class="keeps">
-          <div class="keep">
-            <span class="badge">최우선</span>
-            <h4>창호공사 <span class="amtx">₩13,700,000</span></h4>
-            <p>단열·결로에 직결됩니다. 26T 유리와 단열간봉 사양을 유지하세요. 나중에 재시공하면 비용이 가장 큰 항목입니다.</p>
-          </div>
-          <div class="keep">
-            <span class="badge">최우선</span>
-            <h4>화장실 방수 <span class="amtx">₩2,200,000</span></h4>
-            <p>2차 방수 포함 사양입니다. 누수가 나면 아랫집 배상까지 이어지고, 마감을 다 뜯어야 합니다.</p>
-          </div>
-          <div class="keep">
-            <span class="badge">권장</span>
-            <h4>전기 배선공사 <span class="amtx">₩850,000</span></h4>
-            <p>마감으로 덮이면 손댈 수 없습니다. 전등 회로 분리와 매립 작업은 그대로 두세요.</p>
-          </div>
-          <div class="keep">
-            <span class="badge">권장</span>
-            <h4>인건비 항목 전반</h4>
-            <p>일수를 줄이면 시공 품질이 직접 떨어집니다. 자재 등급으로 조정하는 편이 안전합니다.</p>
-          </div>
-          <div class="keep">
-            <span class="badge">유지 선택</span>
-            <h4>샤시·벽지·장판·신발장</h4>
-            <p>직접 유지하기로 한 항목입니다. 샤시(창호)는 원래 지킬 항목이고, 벽지(도배지)·장판(바닥재)은 조정 목록에서 제외했습니다.</p>
-          </div>
-        </div>
-      </div>
+    <div class="chk-item">
+      <div class="ct"><span class="tagx a">누락 비용</span> 승강기 이용료 20만원</div>
+      <p>1606번 <b>승강기 이용료 ₩200,000이 총액에 빠져</b> 있어요(별도 표시). 관리사무소 규정이라 실제로 나갑니다. 예산에 미리 더해두세요.</p>
     </div>
-  </section>
-
-  <!-- ================= VIEW 4 ================= -->
-  <section class="view" id="v4">
-    <div class="card">
-      <div class="card-head"><div><h2>계약 전 확인</h2><div class="sub">금액보다 이쪽이 실제 리스크입니다</div></div></div>
-      <div class="card-body flush">
-        <div class="checkitem">
-          <span class="pill w">실측 변경</span>
-          <p><b>"실측 시 변경" 표시가 창호·주방가구·목공사 세 곳에 붙어 있습니다.</b> 이 셋이 공사비의 약 40%입니다. 실측 후 증액 상한을 계약서에 숫자로 명시하세요. 상한이 없으면 조정한 금액이 그대로 되돌아옵니다.</p>
-        </div>
-        <div class="checkitem">
-          <span class="pill w">누락 비용</span>
-          <p><b>승강기 이용료 ₩200,000이 총액에 빠져 있습니다.</b> 관리사무소 규정 항목이라 별도로 나갑니다. 실제 예산에 더해두세요.</p>
-        </div>
-        <div class="checkitem">
-          <span class="pill w">공기 미기재</span>
-          <p><b>총공사기간 칸이 비어 있습니다.</b> 착공일과 완료일을 채워서 받고, 지연 시 배상 조항까지 함께 넣으세요.</p>
-        </div>
-        <div class="checkitem">
-          <span class="pill b">협상법</span>
-          <p><b>금액이 아니라 품목을 지정해서 빼세요.</b> "천만원 깎아주세요"라고 하면 부자재나 인건비 일수처럼 눈에 안 보이는 곳에서 줄어듭니다. 조정안 목록을 그대로 읽어주는 방식이 가장 안전합니다.</p>
-        </div>
-        <div class="checkitem">
-          <span class="pill b">멘트</span>
-          <p>"총액을 7,100만원 선으로 맞추고 싶습니다. 창호와 방수, 전기는 그대로 가고, 대신 목공 범위를 몰딩·걸레받이 위주로 줄이고 욕실·주방 포세린 추가비는 빼주세요. 주방가구는 리프트장과 블룸서랍을 일반 사양으로, 상판도 일반 인조대리석으로 조정 부탁드립니다."</p>
-        </div>
-      </div>
+    <div class="chk-item">
+      <div class="ct"><span class="tagx a">공기 미기재</span> 총공사기간 칸이 비어 있음</div>
+      <p>착공일·완료일을 채워서 받고, <b>지연되면 하루당 얼마 배상</b> 조항까지 함께 넣으세요.</p>
+    </div>
+    <div class="chk-item">
+      <div class="ct"><span class="tagx b">협상 팁</span> 금액 말고 "품목"을 지정하세요</div>
+      <p>"천만원만 깎아주세요"라고 하면 눈에 안 보이는 부자재·인건비에서 몰래 줄어요. <b>위 조정 목록을 그대로 읽어주는 방식</b>이 가장 안전합니다.</p>
+      <div class="script">"총액을 7,100만원 선으로 맞추고 싶어요. 창호·방수·전기는 그대로 가고, 대신 목공은 몰딩·걸레받이 위주로 줄이고, 욕실·주방 포세린 추가비는 빼주세요. 주방가구는 리프트장·블룸서랍을 일반 사양으로, 상판도 일반 인조대리석으로 부탁드려요."</div>
     </div>
   </section>
 
   <footer>
-    금액은 원 견적서 산식(공사비 → 이윤 10% → 산재 1.1% → 고용 0.42% → 십만원 절사 → 부가세 10%)을 그대로 적용했습니다. 조정 후 단가는 시장 일반가 기준 추정치이며 실제 금액은 업체 협의에 따라 달라집니다.
+    금액은 원 견적서 산식(공사비 → 이윤 10% → 산재 1.1% + 고용 0.42% → 십만원 절사 → 부가세 10%)을 그대로 적용했어요. 조정 후 단가는 시장 일반가 기준 추정치이며, 실제 금액은 업체 협의에 따라 달라집니다. 참고용으로만 봐주세요.
   </footer>
 </div>
 
 <div class="dock">
   <div class="dock-in">
-    <div class="dcell was"><div class="k">원 견적</div><div class="v num">₩82,390,000</div></div>
-    <span class="arrow">→</span>
-    <div class="dcell now"><div class="k">조정 후</div><div class="v num" id="dNow">₩72,710,000</div></div>
-    <div class="dcell save"><div class="k">절감</div><div class="v num" id="dSave">₩9,680,000</div></div>
-    <div class="prog">
-      <div class="prog-track"><div class="prog-fill" id="pFill"></div></div>
-      <div class="prog-lbl"><span class="st" id="pMsg"></span><span>목표 ₩71,000,000</span></div>
+    <div class="d-now">
+      <div class="k">지금 예상 금액</div>
+      <div class="v num" id="dockNow">₩71,060,000 <small id="dockSave">−1,133만</small></div>
+    </div>
+    <div class="d-bar">
+      <div class="t"><i id="dockFill"></i></div>
+      <div class="m" id="dockMsg">7천 초반대 달성 🎉</div>
     </div>
   </div>
 </div>
@@ -414,42 +341,58 @@ footer{color:var(--tx-3);font-size:12px;line-height:1.65;padding:16px 0 8px;}
 (function(){
 "use strict";
 
-var BASE=67121000, ORIG=82390000, TARGET=71000000;
+var BASE=67121000, ORIG=82390000, BAND_HI=72000000;
 
 var CATS=[
- {c:"200",n:"창호공사",a:13700000},{c:"300",n:"도어공사",a:3606000},
- {c:"400",n:"도기공사",a:1940000},{c:"500",n:"수전공사",a:2760000},
- {c:"600",n:"타일공사",a:7450000},{c:"700",n:"가구공사",a:11630000},
- {c:"800",n:"전기공사",a:2450000},{c:"900",n:"조명공사",a:300000},
- {c:"1000",n:"도장공사",a:700000},{c:"1100",n:"시트공사",a:400000},
- {c:"1200",n:"바닥공사",a:2835000},{c:"1300",n:"도배공사",a:4295000},
- {c:"1400",n:"목공사",a:6200000},{c:"1500",n:"철거공사",a:7140000},
- {c:"1600",n:"기타공사",a:1715000}
+ {n:"창호공사",p:"샷시·창문",a:13700000},
+ {n:"가구공사",p:"주방·신발장·화장대",a:11630000},
+ {n:"타일공사",p:"욕실·주방 타일",a:7450000},
+ {n:"철거공사",p:"기존 뜯어내기",a:7140000},
+ {n:"목공사",p:"천장·몰딩",a:6200000},
+ {n:"도배공사",p:"벽지",a:4295000},
+ {n:"도어공사",p:"현관·방문",a:3606000},
+ {n:"바닥공사",p:"장판",a:2835000},
+ {n:"수전공사",p:"수도꼭지·선반",a:2760000},
+ {n:"전기공사",p:"콘센트·배선",a:2450000},
+ {n:"도기공사",p:"변기·세면대",a:1940000},
+ {n:"기타공사",p:"보양·잡비",a:1715000},
+ {n:"도장공사",p:"페인트",a:700000},
+ {n:"시트공사",p:"필름·현관 마감",a:400000},
+ {n:"조명공사",p:"조명 설치",a:300000}
 ];
 
 var CUTS=[
- {c:"1401",t:"목공사 범위 축소",v:2500000,f:6200000,to:3700000,
-  d:"거실·주방 우물천장과 간접조명 박스를 빼고 몰딩·걸레받이·천정몰딩만 남깁니다. 620만원이 한 줄로 묶여 있어 내역 분리부터 요청하세요."},
- {c:"603",t:"욕실 포세린타일 추가비",v:1600000,f:1600000,to:0,
-  d:"602번에 화장실 벽타일 55㎡가 이미 잡혀 있습니다. 포세린은 그 위에 얹는 업그레이드 비용이라 국내산 일반 타일로 가면 통째로 빠집니다."},
- {c:"701",t:"주방가구 사양 하향",v:1800000,f:9070000,to:7270000,
-  d:"상부장 리프트(하만 엔칸토) → 여닫이, 블룸 서랍 5set → 국산 레일, 엘지 하이막스 → 일반 인조대리석. 사용성에 지장 없는 등급 조정입니다."},
- {c:"704",t:"화장대 LED 거울 일체형 해제",v:500000,f:900000,to:400000,
-  d:"거울을 따로 사서 다는 편이 훨씬 쌉니다. 일체형은 LED가 나가면 통째로 교체해야 합니다."},
- {c:"302",t:"현관 중문 사양 변경",v:400000,f:850000,to:450000,
-  d:"3연동 슬림형 → 스윙형. 입주 후 별도 시공으로 미루면 이번 공사에서 통째로 빠집니다."},
- {c:"1604",t:"폐기물처리 2회 → 1회",v:300000,f:600000,to:300000,
-  d:"철거 물량을 한 번에 모아 내보낼 수 있는지 협의하세요. 30평 기준 1T 2회는 여유 있게 잡은 수치입니다."},
- {c:"608",t:"주방벽 포세린타일 추가비",v:300000,f:300000,to:0,
-  d:"607번 주방 벽타일 10㎡가 이미 있습니다. 싱크대 상판 위 구간이라 일반 타일로도 티가 나지 않습니다."},
- {c:"501~508",t:"수전·액세서리 크롬 마감으로",v:300000,f:830000,to:530000,
-  d:"세면기수전·욕조샤워수전·슬라이드바·선반·수건걸이·휴지걸이가 전부 무광니켈입니다. 일반 크롬이 관리도 더 쉽습니다."},
- {c:"1605",t:"공사동의서 대행 해제",v:165000,f:165000,to:0,
-  d:"관리사무소에 직접 접수하면 되는 서류입니다. 시간이 안 되면 그냥 두셔도 큰 금액은 아닙니다."}
+ {tier:"safe", t:"욕실 고급 타일 → 일반 타일", v:1600000, f:1600000, to:0,
+  w:"욕실 벽 타일을 고급(포세린)에서 일반으로. 일반 타일 값은 이미 따로 잡혀 있어서, 이건 '고급으로 올리는 추가금'만 빼는 거예요."},
+ {tier:"safe", t:"거울 LED 일체형 → 일반 거울", v:500000, f:900000, to:400000,
+  w:"거울은 따로 사서 다는 게 훨씬 싸요. LED 일체형은 불 나가면 통째로 교체해야 합니다."},
+ {tier:"safe", t:"철거 쓰레기 처리 2회 → 1회", v:300000, f:600000, to:300000,
+  w:"한 번에 모아 버릴 수 있는지 물어보세요. 30평이면 1회로도 넉넉해요."},
+ {tier:"safe", t:"주방 벽 고급 타일 추가금 빼기", v:300000, f:300000, to:0,
+  w:"싱크대 상판 위 좁은 구간이라 일반 타일이어도 티가 안 나요."},
+ {tier:"safe", t:"서류 대행 → 직접 접수", v:165000, f:165000, to:0,
+  w:"공사 동의서는 관리사무소에 직접 내면 되는 서류예요. 시간만 있으면 무료."},
+
+ {tier:"taste", t:"천장 꾸밈 공사 줄이기 (목공)", v:2500000, f:6200000, to:3700000,
+  w:"거실·주방 우물천장(단 넣은 천장)과 간접조명 박스를 빼고 몰딩·걸레받이만. 620만원이 한 줄로 묶여 있으니 '뭐가 포함인지' 나눠 달라고 하세요."},
+ {tier:"taste", t:"주방 가구 옵션 한 단계 낮추기", v:1800000, f:9070000, to:7270000,
+  w:"위 수납장 자동 리프트→여닫이, 서랍 고급브랜드→국산, 상판 하이막스→일반 인조대리석. 쓰는 데는 지장 없어요."},
+ {tier:"taste", t:"바닥재 두께 4.5mm → 3.0mm (장판)", v:810000, f:2835000, to:2025000,
+  w:"층간소음이 걱정되면 그대로 두는 게 나아요. 얇게 가면 평당 약 3만원 절약."},
+ {tier:"taste", t:"벽지 고급 → 일반 실크벽지", v:510000, f:1785000, to:1275000,
+  w:"고급 벽지(엘지 디아망) 대신 일반 실크벽지. 붙이는 인건비는 그대로라 마감 품질은 거의 같아요."},
+ {tier:"taste", t:"현관 중문 3연동 → 스윙형", v:400000, f:850000, to:450000,
+  w:"미닫이 3연동 대신 여닫이. 입주 후에 따로 달아도 되는 항목이에요."},
+ {tier:"taste", t:"욕실 수전 무광니켈 → 일반 크롬", v:300000, f:830000, to:530000,
+  w:"수도꼭지·수건걸이 등 마감 색만 바꿔요. 크롬이 물때 관리도 더 쉬워요."}
 ];
 
 function won(n){return "₩"+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");}
-
+function man(n){
+  var m=Math.round(n/10000);
+  if(m>=10000){var e=Math.floor(m/10000),r=m%10000;return e+"천"+(r?(","+r):"")+"만";}
+  return m.toLocaleString()+"만";
+}
 function calc(base){
   var wp=base*1.1;
   var ins=wp*0.011+wp*0.0042;
@@ -457,72 +400,65 @@ function calc(base){
   return {profit:wp-base, ins:ins, preVat:pre, vat:pre*0.1, total:pre*1.1};
 }
 
-/* 표 */
-var maxA=Math.max.apply(null,CATS.map(function(x){return x.a;}));
-document.getElementById("baseRows").innerHTML=CATS.map(function(x){
-  var p=x.a/BASE*100, major=p>=10;
-  return "<tr><td class=\"code\">"+x.c+"</td><td>"+x.n+"</td>"+
-    "<td class=\"r num\">"+won(x.a)+"</td>"+
-    "<td class=\"barcell\"><div class=\"bar"+(major?" bar-major":"")+"\"><i style=\"width:"+(x.a/maxA*100)+"%\"></i></div>"+
-    "<div class=\"pct\">"+p.toFixed(1)+"%</div></td></tr>";
+var maxA=CATS[0].a;
+document.getElementById("spend").innerHTML=CATS.map(function(x){
+  var p=x.a/BASE*100, big=p>=10;
+  return "<div class=\"r"+(big?" big":"")+"\">"+
+    "<div class=\"name\">"+x.n+"<em>"+x.p+"</em></div>"+
+    "<div class=\"val\">"+won(x.a)+"</div>"+
+    "<div class=\"track\"><i style=\"width:"+(x.a/maxA*100).toFixed(1)+"%\"></i></div>"+
+    "</div>";
 }).join("");
 
-/* 조정 리스트 */
-var host=document.getElementById("cutRows");
-host.innerHTML=CUTS.map(function(x,i){
-  return "<div class=\"row\" role=\"checkbox\" aria-checked=\"true\" tabindex=\"0\" data-i=\""+i+"\">"+
-    "<div class=\"chk\" aria-hidden=\"true\"></div>"+
-    "<div><div class=\"r-title\">"+x.t+"<span class=\"code\">"+x.c+"</span></div>"+
-    "<div class=\"r-desc\">"+x.d+"</div></div>"+
-    "<div class=\"amt\"><span class=\"big\">−"+won(x.v)+"</span>"+
-    "<span class=\"sm\">"+won(x.f)+" → "+won(x.to)+"</span></div></div>";
-}).join("");
+function itemHTML(x,i){
+  return "<div class=\"item on "+x.tier+"\" role=\"checkbox\" aria-checked=\"true\" tabindex=\"0\" data-i=\""+i+"\">"+
+    "<div class=\"item-top\">"+
+      "<div class=\"box\" aria-hidden=\"true\"></div>"+
+      "<div><div class=\"i-title\">"+x.t+"</div><div class=\"i-what\">"+x.w+"</div></div>"+
+      "<div class=\"i-amt\"><span class=\"big\">−"+won(x.v)+"</span>"+
+        "<span class=\"sm\">"+won(x.f)+" → "+won(x.to)+"</span>"+
+        "<span class=\"state\">빼는 중</span></div>"+
+    "</div></div>";
+}
+document.getElementById("grpSafe").innerHTML=CUTS.map(function(x,i){return x.tier==="safe"?itemHTML(x,i):"";}).join("");
+document.getElementById("grpTaste").innerHTML=CUTS.map(function(x,i){return x.tier==="taste"?itemHTML(x,i):"";}).join("");
 
-var rows=[].slice.call(host.querySelectorAll(".row"));
+var items=[].slice.call(document.querySelectorAll(".item"));
 var on=CUTS.map(function(){return true;});
 
 function render(){
-  var cut=0,count=0;
+  var cut=0;
   on.forEach(function(v,i){
-    if(v){cut+=CUTS[i].v;count++;}
-    rows[i].classList.toggle("off",!v);
-    rows[i].setAttribute("aria-checked",v?"true":"false");
+    if(v)cut+=CUTS[i].v;
+    var el=items.filter(function(e){return +e.dataset.i===i;})[0];
+    el.classList.toggle("on",v);
+    el.setAttribute("aria-checked",v?"true":"false");
+    el.querySelector(".state").textContent=v?"빼는 중":"그대로 둠";
   });
 
-  var base=BASE-cut, r=calc(base), total=r.total, saved=ORIG-total;
+  var total=calc(BASE-cut).total, saved=ORIG-total;
+  var done=total<=BAND_HI;
+  var pct=Math.max(0,Math.min(100,(ORIG-total)/(ORIG-BAND_HI)*100));
 
-  document.getElementById("kNow").textContent=won(total);
-  document.getElementById("kNowD").textContent=count+"개 항목 적용";
-  document.getElementById("kSave").textContent=won(saved);
-  document.getElementById("kSaveD").textContent="−"+(saved/ORIG*100).toFixed(1)+"%";
+  document.getElementById("dialNow").textContent=won(total);
+  document.getElementById("dialSave").textContent=man(saved)+"원 아꼈어요";
+  var df=document.getElementById("dialFill");
+  df.style.width=pct+"%"; df.classList.toggle("done",done);
+  var dm=document.getElementById("dialMsg");
+  dm.textContent=done?"7천만원대 초반 달성 🎉":("7천 초반대까지 "+man(total-BAND_HI)+"원 남았어요");
+  dm.className="st "+(done?"done":"miss");
 
-  var goal=document.getElementById("kGoal"), gv=document.getElementById("kGoalV");
-  var hit=total<=TARGET;
-  goal.classList.toggle("hit",hit);
-  goal.classList.toggle("miss",!hit);
-  gv.textContent=hit?("여유 "+won(TARGET-total)):("초과 "+won(total-TARGET));
-
-  document.getElementById("cBase").textContent=won(base);
-  document.getElementById("cProfit").textContent=won(r.profit);
-  document.getElementById("cIns").textContent=won(r.ins);
-  document.getElementById("cVat").textContent=won(r.vat);
-  document.getElementById("cTotal").textContent=won(total);
-
-  document.getElementById("dNow").textContent=won(total);
-  document.getElementById("dSave").textContent=won(saved);
-
-  var need=ORIG-TARGET;
-  var pct=Math.max(0,Math.min(100,saved/need*100));
-  var fill=document.getElementById("pFill");
-  fill.style.width=pct+"%";
-  fill.classList.toggle("hit",hit);
-  var msg=document.getElementById("pMsg");
-  msg.textContent=hit?"목표 도달":(won(total-TARGET)+" 더 줄여야 합니다");
-  msg.className="st "+(hit?"hit":"miss");
+  document.getElementById("dockNow").firstChild.textContent=won(total)+" ";
+  document.getElementById("dockSave").textContent="−"+man(saved);
+  var kf=document.getElementById("dockFill");
+  kf.style.width=pct+"%"; kf.classList.toggle("done",done);
+  var km=document.getElementById("dockMsg");
+  km.textContent=done?"7천 초반대 달성 🎉":("목표까지 "+man(total-BAND_HI));
+  km.className="m "+(done?"done":"");
 }
 
 function toggle(i){on[i]=!on[i];render();}
-rows.forEach(function(el){
+items.forEach(function(el){
   var i=+el.dataset.i;
   el.addEventListener("click",function(){toggle(i);});
   el.addEventListener("keydown",function(e){
@@ -530,42 +466,9 @@ rows.forEach(function(el){
   });
 });
 
-document.getElementById("btnAll").addEventListener("click",function(){on=on.map(function(){return true;});render();});
-document.getElementById("btnNone").addEventListener("click",function(){on=on.map(function(){return false;});render();});
-document.getElementById("btnTarget").addEventListener("click",function(){
-  var order=CUTS.map(function(x,i){return {i:i,v:x.v};}).sort(function(a,b){return b.v-a.v;});
-  on=on.map(function(){return false;});
-  var acc=0;
-  for(var k=0;k<order.length;k++){
-    if(calc(BASE-acc).total<=TARGET) break;
-    on[order[k].i]=true; acc+=order[k].v;
-  }
-  render();
-});
-
-/* 뷰 전환 */
-var TITLES={
-  v1:["현재 견적서","박목수의 열린 견적서 · 인천3호 · 부가세 포함"],
-  v2:["조정안","빼도 아쉬울 일이 적은 항목 9개 (샤시·벽지·장판·신발장 유지)"],
-  v3:["지킬 항목","여기서 아끼면 나중에 더 나갑니다"],
-  v4:["계약 체크","금액보다 이쪽이 실제 리스크"]
-};
-var navBtns=[].slice.call(document.querySelectorAll("#nav button"));
-navBtns.forEach(function(b){
-  b.addEventListener("click",function(){
-    var id=b.dataset.view;
-    navBtns.forEach(function(x){
-      if(x===b) x.setAttribute("aria-current","page");
-      else x.removeAttribute("aria-current");
-    });
-    document.querySelectorAll(".view").forEach(function(v){
-      v.classList.toggle("on",v.id===id);
-    });
-    document.getElementById("pageTitle").textContent=TITLES[id][0];
-    document.getElementById("pageSub").textContent=TITLES[id][1];
-    window.scrollTo({top:0,behavior:"smooth"});
-  });
-});
+document.getElementById("pTarget").addEventListener("click",function(){on=CUTS.map(function(){return true;});render();});
+document.getElementById("pSafe").addEventListener("click",function(){on=CUTS.map(function(x){return x.tier==="safe";});render();});
+document.getElementById("pReset").addEventListener("click",function(){on=CUTS.map(function(){return false;});render();});
 
 render();
 })();
