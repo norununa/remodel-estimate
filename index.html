@@ -213,8 +213,8 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
     <h1>8,239만원 견적,<br>어디를 줄일 수 있는지 같이 봐요</h1>
     <div class="dial">
       <div class="from">원래 견적 <s class="num">₩82,390,000</s> 에서</div>
-      <div class="now num" id="dialNow">₩72,930,000</div>
-      <div class="save num" id="dialSave">946만원 아꼈어요</div>
+      <div class="now num" id="dialNow">₩72,270,000</div>
+      <div class="save num" id="dialSave">1,012만원 아꼈어요</div>
       <div class="band">
         <div class="progress"><i id="dialFill"></i></div>
         <div class="band-lbl">
@@ -223,7 +223,7 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
         </div>
       </div>
     </div>
-    <p class="hint">장판·벽지·서류대행은 <b>유지</b>한 상태예요. 더 줄이고 싶으면 아래 🟡 항목을 눌러 추가로 뺄 수 있어요.</p>
+    <p class="hint">장판·벽지·서류대행·철거 쓰레기는 유지하기로 해서 조정 목록에서 뺐어요. 아래 항목으로 <b>7,227만원</b>까지 맞춘 상태예요.</p>
   </div>
 
   <section class="blk" id="s1">
@@ -262,10 +262,12 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
     </div>
 
     <div class="presets">
-      <button class="preset go" id="pTarget">✨ 최대한 줄이기<small>취향 항목까지 전부 · 7,106만원</small></button>
-      <button class="preset" id="pSafe">🟢 안전한 것만<small>품질 손해 0 · 약 7,890만원</small></button>
+      <button class="preset go" id="pTarget">✨ 전부 적용<small>추천 항목 모두 · 7,227만원</small></button>
+      <button class="preset" id="pSafe">🟢 안전한 것만<small>품질 손해 0 · 약 7,940만원</small></button>
       <button class="preset" id="pReset">↩︎ 원래대로<small>아무것도 안 뺀 상태</small></button>
     </div>
+
+    <div style="background:var(--taste-bg);border-radius:11px;padding:11px 14px;font-size:12.5px;color:#7A5410;line-height:1.55;margin:-2px 0 16px;">🔒 <b>장판·벽지·서류대행·철거 쓰레기 처리(2회 필수)</b>는 유지하기로 해서 조정 목록에서 뺐어요. 다시 넣고 싶으면 말씀만 주세요.</div>
 
     <div class="grp-head">
       <span class="dot safe"></span>
@@ -341,7 +343,7 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
   <div class="dock-in">
     <div class="d-now">
       <div class="k">지금 예상 금액</div>
-      <div class="v num" id="dockNow">₩72,930,000 <small id="dockSave">−946만</small></div>
+      <div class="v num" id="dockNow">₩72,270,000 <small id="dockSave">−1,012만</small></div>
     </div>
     <div class="d-bar">
       <div class="t"><i id="dockFill"></i></div>
@@ -467,25 +469,21 @@ var CUTS=[
   w:"욕실 벽 타일을 고급(포세린)에서 일반으로. 일반 타일 값은 이미 따로 잡혀 있어서, 이건 '고급으로 올리는 추가금'만 빼는 거예요."},
  {tier:"safe", t:"거울 LED 일체형 → 일반 거울", v:500000, f:900000, to:400000,
   w:"거울은 따로 사서 다는 게 훨씬 싸요. LED 일체형은 불 나가면 통째로 교체해야 합니다."},
- {tier:"safe", t:"철거 쓰레기 처리 2회 → 1회", v:300000, f:600000, to:300000,
-  w:"한 번에 모아 버릴 수 있는지 물어보세요. 30평이면 1회로도 넉넉해요."},
  {tier:"safe", t:"주방 벽 고급 타일 추가금 빼기", v:300000, f:300000, to:0,
   w:"싱크대 상판 위 좁은 구간이라 일반 타일이어도 티가 안 나요."},
- {tier:"safe", keepDefault:true, t:"서류 대행 → 직접 접수", v:165000, f:165000, to:0,
-  w:"공사 동의서는 관리사무소에 직접 내면 되는 서류예요. (요청대로 기본 유지 중)"},
 
  {tier:"taste", t:"천장 꾸밈 공사 줄이기 (목공)", v:2500000, f:6200000, to:3700000,
   w:"거실·주방 우물천장(단 넣은 천장)과 간접조명 박스를 빼고 몰딩·걸레받이만. 620만원이 한 줄로 묶여 있으니 '뭐가 포함인지' 나눠 달라고 하세요."},
  {tier:"taste", t:"주방 가구 옵션 한 단계 낮추기", v:1800000, f:9070000, to:7270000,
   w:"위 수납장 자동 리프트→여닫이, 서랍 고급브랜드→국산, 상판 하이막스→일반 인조대리석. 쓰는 데는 지장 없어요."},
- {tier:"taste", keepDefault:true, t:"바닥재 두께 4.5mm → 3.0mm (장판)", v:810000, f:2835000, to:2025000,
-  w:"층간소음 때문에 요청대로 기본 유지 중이에요. 얇게 가면 평당 약 3만원 절약."},
- {tier:"taste", keepDefault:true, t:"벽지 고급 → 일반 실크벽지", v:510000, f:1785000, to:1275000,
-  w:"요청대로 고급 벽지(엘지 디아망) 그대로 유지 중이에요. 일반 실크벽지로 낮추면 절약."},
  {tier:"taste", t:"현관 중문 3연동 → 스윙형", v:400000, f:850000, to:450000,
   w:"미닫이 3연동 대신 여닫이. 입주 후에 따로 달아도 되는 항목이에요."},
  {tier:"taste", t:"욕실 수전 무광니켈 → 일반 크롬", v:300000, f:830000, to:530000,
-  w:"수도꼭지·수건걸이 등 마감 색만 바꿔요. 크롬이 물때 관리도 더 쉬워요."}
+  w:"수도꼭지·수건걸이 등 마감 색만 바꿔요. 크롬이 물때 관리도 더 쉬워요."},
+ {tier:"taste", t:"변기·세면대 수입 → 국산 브랜드", v:600000, f:1300000, to:700000,
+  w:"아메리칸스탠다드(수입) 대신 대림·이누스 같은 국산 표준형으로. 세면기 2개+양변기 2개 기준, 쓰는 데 성능 차이는 거의 없어요."},
+ {tier:"taste", t:"스위치·콘센트 준고급 → 일반", v:200000, f:600000, to:400000,
+  w:"베코 보노(준고급) 대신 일반 국산으로. 매일 손이 닿는 부분이라, 디자인이 마음에 들면 남겨도 됩니다."}
 ];
 
 function won(n){return "₩"+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");}
