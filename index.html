@@ -213,8 +213,8 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
     <h1>8,239만원 견적,<br>어디를 줄일 수 있는지 같이 봐요</h1>
     <div class="dial">
       <div class="from">원래 견적 <s class="num">₩82,390,000</s> 에서</div>
-      <div class="now num" id="dialNow">₩72,270,000</div>
-      <div class="save num" id="dialSave">1,012만원 아꼈어요</div>
+      <div class="now num" id="dialNow">₩73,040,000</div>
+      <div class="save num" id="dialSave">935만원 아꼈어요</div>
       <div class="band">
         <div class="progress"><i id="dialFill"></i></div>
         <div class="band-lbl">
@@ -223,7 +223,7 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
         </div>
       </div>
     </div>
-    <p class="hint">장판·벽지·서류대행·철거 쓰레기는 유지하기로 해서 조정 목록에서 뺐어요. 아래 항목으로 <b>7,227만원</b>까지 맞춘 상태예요.</p>
+    <p class="hint">장판·벽지·서류대행·철거 쓰레기·변기·세면대는 유지하기로 해서 조정 목록에서 뺐어요. 아래 항목으로 <b>7,304만원</b>까지 맞춘 상태예요.</p>
   </div>
 
   <section class="blk" id="s1">
@@ -262,12 +262,12 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
     </div>
 
     <div class="presets">
-      <button class="preset go" id="pTarget">✨ 전부 적용<small>추천 항목 모두 · 7,227만원</small></button>
+      <button class="preset go" id="pTarget">✨ 전부 적용<small>추천 항목 모두 · 7,304만원</small></button>
       <button class="preset" id="pSafe">🟢 안전한 것만<small>품질 손해 0 · 약 7,940만원</small></button>
       <button class="preset" id="pReset">↩︎ 원래대로<small>아무것도 안 뺀 상태</small></button>
     </div>
 
-    <div style="background:var(--taste-bg);border-radius:11px;padding:11px 14px;font-size:12.5px;color:#7A5410;line-height:1.55;margin:-2px 0 16px;">🔒 <b>장판·벽지·서류대행·철거 쓰레기 처리(2회 필수)</b>는 유지하기로 해서 조정 목록에서 뺐어요. 다시 넣고 싶으면 말씀만 주세요.</div>
+    <div style="background:var(--taste-bg);border-radius:11px;padding:11px 14px;font-size:12.5px;color:#7A5410;line-height:1.55;margin:-2px 0 16px;">🔒 <b>장판·벽지·서류대행·철거 쓰레기(2회 필수)·변기·세면대(아메리칸스탠다드)</b>는 유지하기로 해서 조정 목록에서 뺐어요. 다시 넣고 싶으면 말씀만 주세요.</div>
 
     <div class="grp-head">
       <span class="dot safe"></span>
@@ -343,7 +343,7 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
   <div class="dock-in">
     <div class="d-now">
       <div class="k">지금 예상 금액</div>
-      <div class="v num" id="dockNow">₩72,270,000 <small id="dockSave">−1,012만</small></div>
+      <div class="v num" id="dockNow">₩73,040,000 <small id="dockSave">−935만</small></div>
     </div>
     <div class="d-bar">
       <div class="t"><i id="dockFill"></i></div>
@@ -356,7 +356,7 @@ footer{color:var(--ink-3);font-size:12px;line-height:1.7;padding:26px 0 10px;}
 (function(){
 "use strict";
 
-var BASE=67121000, ORIG=82390000, BAND_HI=73000000;
+var BASE=67121000, ORIG=82390000, BAND_HI=73500000;
 
 /* 공정 15개 + 원 견적서 세부 내역 (d: [내용, 금액, 단가·수량, 추가금여부]) */
 var CATS=[
@@ -480,8 +480,6 @@ var CUTS=[
   w:"미닫이 3연동 대신 여닫이. 입주 후에 따로 달아도 되는 항목이에요."},
  {tier:"taste", t:"욕실 수전 무광니켈 → 일반 크롬", v:300000, f:830000, to:530000,
   w:"수도꼭지·수건걸이 등 마감 색만 바꿔요. 크롬이 물때 관리도 더 쉬워요."},
- {tier:"taste", t:"변기·세면대 수입 → 국산 브랜드", v:600000, f:1300000, to:700000,
-  w:"아메리칸스탠다드(수입) 대신 대림·이누스 같은 국산 표준형으로. 세면기 2개+양변기 2개 기준, 쓰는 데 성능 차이는 거의 없어요."},
  {tier:"taste", t:"스위치·콘센트 준고급 → 일반", v:200000, f:600000, to:400000,
   w:"베코 보노(준고급) 대신 일반 국산으로. 매일 손이 닿는 부분이라, 디자인이 마음에 들면 남겨도 됩니다."}
 ];
