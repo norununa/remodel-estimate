@@ -237,9 +237,9 @@ footer{color:var(--tx-3);font-size:12px;line-height:1.65;padding:16px 0 8px;}
 
   <div class="kpis">
     <div class="kpi was"><div class="k">원 견적</div><div class="v num">₩82,390,000</div><div class="d">부가세 포함</div></div>
-    <div class="kpi now"><div class="k">조정 후</div><div class="v num" id="kNow">₩71,060,000</div><div class="d" id="kNowD">11개 항목 적용</div></div>
-    <div class="kpi save"><div class="k">절감</div><div class="v num" id="kSave">₩11,330,000</div><div class="d" id="kSaveD">−13.8%</div></div>
-    <div class="kpi goal" id="kGoal"><div class="k">목표 대비</div><div class="v num" id="kGoalV">여유 ₩−60,000</div><div class="d">₩71,000,000 기준</div></div>
+    <div class="kpi now"><div class="k">조정 후</div><div class="v num" id="kNow">₩72,710,000</div><div class="d" id="kNowD">9개 항목 적용</div></div>
+    <div class="kpi save"><div class="k">절감</div><div class="v num" id="kSave">₩9,680,000</div><div class="d" id="kSaveD">−11.7%</div></div>
+    <div class="kpi goal miss" id="kGoal"><div class="k">목표 대비</div><div class="v num" id="kGoalV">초과 ₩1,710,000</div><div class="d">₩71,000,000 기준</div></div>
   </div>
 
   <!-- ================= VIEW 1 ================= -->
@@ -353,6 +353,11 @@ footer{color:var(--tx-3);font-size:12px;line-height:1.65;padding:16px 0 8px;}
             <h4>인건비 항목 전반</h4>
             <p>일수를 줄이면 시공 품질이 직접 떨어집니다. 자재 등급으로 조정하는 편이 안전합니다.</p>
           </div>
+          <div class="keep">
+            <span class="badge">유지 선택</span>
+            <h4>샤시·벽지·장판·신발장</h4>
+            <p>직접 유지하기로 한 항목입니다. 샤시(창호)는 원래 지킬 항목이고, 벽지(도배지)·장판(바닥재)은 조정 목록에서 제외했습니다.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -396,8 +401,8 @@ footer{color:var(--tx-3);font-size:12px;line-height:1.65;padding:16px 0 8px;}
   <div class="dock-in">
     <div class="dcell was"><div class="k">원 견적</div><div class="v num">₩82,390,000</div></div>
     <span class="arrow">→</span>
-    <div class="dcell now"><div class="k">조정 후</div><div class="v num" id="dNow">₩71,060,000</div></div>
-    <div class="dcell save"><div class="k">절감</div><div class="v num" id="dSave">₩11,330,000</div></div>
+    <div class="dcell now"><div class="k">조정 후</div><div class="v num" id="dNow">₩72,710,000</div></div>
+    <div class="dcell save"><div class="k">절감</div><div class="v num" id="dSave">₩9,680,000</div></div>
     <div class="prog">
       <div class="prog-track"><div class="prog-fill" id="pFill"></div></div>
       <div class="prog-lbl"><span class="st" id="pMsg"></span><span>목표 ₩71,000,000</span></div>
@@ -429,10 +434,6 @@ var CUTS=[
   d:"602번에 화장실 벽타일 55㎡가 이미 잡혀 있습니다. 포세린은 그 위에 얹는 업그레이드 비용이라 국내산 일반 타일로 가면 통째로 빠집니다."},
  {c:"701",t:"주방가구 사양 하향",v:1800000,f:9070000,to:7270000,
   d:"상부장 리프트(하만 엔칸토) → 여닫이, 블룸 서랍 5set → 국산 레일, 엘지 하이막스 → 일반 인조대리석. 사용성에 지장 없는 등급 조정입니다."},
- {c:"1201",t:"바닥재 두께 하향",v:810000,f:2835000,to:2025000,
-  d:"소리잠 4.5T → 3.0T. 평당 105,000 → 75,000원. 층간소음이 신경 쓰이면 이 항목은 남기는 편이 낫습니다."},
- {c:"1301",t:"도배지 등급 조정",v:510000,f:1785000,to:1275000,
-  d:"엘지 디아망 → 일반 실크벽지. 평당 21,000 → 15,000원. 퍼티 포함 시공 인건비(1303)는 그대로 두세요."},
  {c:"704",t:"화장대 LED 거울 일체형 해제",v:500000,f:900000,to:400000,
   d:"거울을 따로 사서 다는 편이 훨씬 쌉니다. 일체형은 LED가 나가면 통째로 교체해야 합니다."},
  {c:"302",t:"현관 중문 사양 변경",v:400000,f:850000,to:450000,
@@ -545,7 +546,7 @@ document.getElementById("btnTarget").addEventListener("click",function(){
 /* 뷰 전환 */
 var TITLES={
   v1:["현재 견적서","박목수의 열린 견적서 · 인천3호 · 부가세 포함"],
-  v2:["조정안","빼도 아쉬울 일이 적은 항목 11개"],
+  v2:["조정안","빼도 아쉬울 일이 적은 항목 9개 (샤시·벽지·장판·신발장 유지)"],
   v3:["지킬 항목","여기서 아끼면 나중에 더 나갑니다"],
   v4:["계약 체크","금액보다 이쪽이 실제 리스크"]
 };
